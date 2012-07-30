@@ -65,7 +65,7 @@ public class GraphEngineTest {
         Protein protein1 = new Protein("P187634", "protein", "protein1", "475435437");
         Protein protein2 = new Protein("P183954", "protein", "protein2", "475435438");
         template.save(protein1);
-        //template.save(protein2);
+        template.save(protein2);
         //ProteinInteraction proteinInteraction1 = new ProteinInteraction(protein1, protein2);
         //proteinInteraction1.setName("phosphorylation");
         ProteinInteraction proteinInteraction = protein1.interactsWith(protein2, "phosphorylation");
