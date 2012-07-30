@@ -13,8 +13,9 @@
     <!-- <context:component-scan base-package="org.springframework.data.neo4j.examples.hellograph" />-->
 
     <neo4j:config graphDatabaseService="graphDatabaseService"/>
-    <bean id="graphDatabaseService" class="org.springframework.data.neo4j.rest.SpringRestGraphDatabase">
-        <constructor-arg value="http://localhost:7474/db/data/" index="0"/>
+    <!-- <bean id="graphDatabaseService" class="org.springframework.data.neo4j.rest.SpringRestGraphDatabase"> -->
+    <bean id="graphDatabaseService" class="org.neo4j.test.ImpermanentGraphDatabase">
+        <constructor-arg value="http://saibaba.local:7474/db/data/" index="0"/>
     </bean>
     
     <!-- <neo4j:config storeDirectory="target/neo4j-db"/> -->
