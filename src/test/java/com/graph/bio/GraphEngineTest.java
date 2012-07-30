@@ -65,11 +65,11 @@ public class GraphEngineTest {
         Protein protein1 = new Protein("P187634", "protein", "protein1", "475435437");
         Protein protein2 = new Protein("P183954", "protein", "protein2", "475435438");
         template.save(protein1);
-        template.save(protein2);
+        //template.save(protein2);
         //ProteinInteraction proteinInteraction1 = new ProteinInteraction(protein1, protein2);
         //proteinInteraction1.setName("phosphorylation");
         ProteinInteraction proteinInteraction = protein1.interactsWith(protein2, "phosphorylation");
-        protein2.interactsWith(protein1, "phosphorylation");
+        //protein2.interactsWith(protein1, "phosphorylation");
         template.save(proteinInteraction);
         
         //template.save(proteinInteraction1);
@@ -82,7 +82,7 @@ public class GraphEngineTest {
         // Had to comment out a bunch of stuff, as the relationships did not come out
         // as expected. The casting is a problem.
         // Something to do with  Type class org.springframework.data.neo4j.fieldaccess.GraphBackedEntityIterableWrapper
-        //ProteinInteraction p = (ProteinInteraction)((ArrayList)foundProtein1.getProteinInteractions()).iterator().next();
+        ProteinInteraction p = (ProteinInteraction)((ArrayList)foundProtein1.getProteinInteractions()).iterator().next();
         
         //log.info("****** START PROTEIN = " + p.getStartProtein().getMessage());
         //log.info("****** END PROTEIN = " + p.getEndProtein().getMessage());
