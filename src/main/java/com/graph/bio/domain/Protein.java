@@ -5,9 +5,12 @@
 package com.graph.bio.domain;
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.Set;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.neo4j.graphdb.Direction;
 import static org.neo4j.graphdb.Direction.BOTH;
 import org.neo4j.helpers.collection.IteratorUtil;
 import org.springframework.data.neo4j.annotation.*;
@@ -65,9 +68,9 @@ public class Protein {
     @Indexed
     private String intactId;
     
-    //@RelatedToVia(elementClass = ProteinInteraction.class, type = "INTERACTS WITH", direction = Direction.BOTH)
-    @RelatedToVia(type = "INTERACTS_WITH", direction = BOTH)
-    Collection<ProteinInteraction> proteinInteractions;
+    @RelatedToVia(elementClass = ProteinInteraction.class, type = "INTERACTS_WITH", direction = Direction.BOTH)
+    //@RelatedToVia(type = "INTERACTS_WITH", direction = BOTH)
+    Set<ProteinInteraction> proteinInteractions = new HashSet<ProteinInteraction>(  );
 
     public Protein(String uniprot, String nodeType, String message, String moleculeIdRef) {
         this.uniprot = uniprot; 
