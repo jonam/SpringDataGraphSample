@@ -10,7 +10,7 @@ relationships were being initialized by Spring Data.
 The work around (as recommended by Oliver Gierke) for now was to 
 initialize relationships for @RelatedToVia manually. 
 
-Was not able to figure out the bug, hence posted this on the spring data forum.
+This bug was posted on the spring data forum.
 
 http://forum.springsource.org/showthread.php?128807-Not-able-to-fetch-relationships-of-node-using-Spring-Data-Neo4J
 
